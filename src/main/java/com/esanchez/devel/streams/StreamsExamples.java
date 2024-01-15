@@ -20,22 +20,31 @@ public class StreamsExamples {
 				new Person("Anna", FEMALE));
 		
 		// Get only the males of the list
-		List<Person> males = persons.stream().filter(p -> p.getGender().equals(MALE)).collect(Collectors.toList());
+		List<Person> males = persons.stream()
+				.filter(p -> p.getGender().equals(MALE))
+				.collect(Collectors.toList());
 		
 		System.out.println("Result list: " + males);
 		
 		// Order the males list by name
-		List<Person> malesSorted = males.stream().sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
+		List<Person> malesSorted = males.stream()
+				.sorted(Comparator.comparing(Person::getName))
+				.collect(Collectors.toList());
 		
 		System.out.println("Result list: " + malesSorted);
 		
 		// Order the males list by name reversed
-		List<Person> malesSortedReversed = males.stream().sorted(Comparator.comparing(Person::getName).reversed()).collect(Collectors.toList());
+		List<Person> malesSortedReversed = males.stream()
+				.sorted(Comparator.comparing(Person::getName).reversed())
+				.collect(Collectors.toList());
 		
 		System.out.println("Result list: " + malesSortedReversed);
 		
 		// Get only the females and sort the result list in one single operation
-		List<Person> femalesSorted = persons.stream().filter(p -> p.getGender().equals(FEMALE)).sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
+		List<Person> femalesSorted = persons.stream()
+				.filter(p -> p.getGender().equals(FEMALE))
+				.sorted(Comparator.comparing(Person::getName))
+				.collect(Collectors.toList());
 		
 		System.out.println("Result list: " + femalesSorted);
 	}
