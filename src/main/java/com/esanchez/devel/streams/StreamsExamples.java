@@ -33,6 +33,11 @@ public class StreamsExamples {
 		List<Person> malesSortedReversed = males.stream().sorted(Comparator.comparing(Person::getName).reversed()).collect(Collectors.toList());
 		
 		System.out.println("Result list: " + malesSortedReversed);
+		
+		// Get only the females and sort the result list in one single operation
+		List<Person> femalesSorted = persons.stream().filter(p -> p.getGender().equals(FEMALE)).sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
+		
+		System.out.println("Result list: " + femalesSorted);
 	}
 	
 	static class Person {
