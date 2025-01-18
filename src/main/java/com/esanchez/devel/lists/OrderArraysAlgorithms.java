@@ -1,5 +1,7 @@
 package com.esanchez.devel.lists;
 
+import java.util.Arrays;
+
 public class OrderArraysAlgorithms {
 
 	private static final Integer[] ORIGINAL = {34, 67, 32, 77, 84, 11, 32, 12};
@@ -11,6 +13,17 @@ public class OrderArraysAlgorithms {
 		for (Integer elem : result) {
 			System.out.print(elem + " | ");
 		}
+		System.out.println();
+		result = orderWithLibrary(ORIGINAL);
+		System.out.print("Result with library: ");
+		for (Integer elem : result) {
+			System.out.print(elem + " | ");
+		}
+	}
+	
+	private static Integer[] orderWithLibrary(Integer[] array) {
+		Arrays.sort(array);
+		return array;
 	}
 	
 	private static Integer[] basicOrderArray(Integer[] array) {
